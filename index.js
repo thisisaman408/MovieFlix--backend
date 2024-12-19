@@ -9,10 +9,11 @@ import routes from "./src/routes/index.js";
 const app = express();
 
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
+  origin: [
+    "http://localhost:3000",
+    "https://move-flix.vercel.app"  // Your Vercel domain
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
