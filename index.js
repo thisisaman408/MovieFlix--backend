@@ -11,9 +11,10 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "https://move-flix.vercel.app"  // Your Vercel domain
+    "https://move-flix.vercel.app"
   ],
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
 app.use(express.json());
