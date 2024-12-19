@@ -9,7 +9,7 @@ const signup = async (req, res) => {
     const checkUser = await userModel.findOne({ username });
 
     if (checkUser) {
-      return responseHandler.badrequest(res, "username already used");
+      return responseHandler.badrequest(res, `Username '${username}' is already taken`);
     }
 
     const user = new userModel();
